@@ -1,1 +1,3 @@
-
+security:
+  jwt:
+    secret-key: verysecretkeyomgwhyisitsosecretdontteleverbody
