@@ -1,5 +1,6 @@
 package uz.mirkamol.learningspringsecurity.security;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,6 +13,8 @@ import java.util.Collection;
 public class UserPrinciple implements UserDetails {
     private final long userId;
     private final String email;
+    @JsonIgnore
+    private final String password;
     private Collection<? extends GrantedAuthority> authorities;
 
     @Override
@@ -21,7 +24,7 @@ public class UserPrinciple implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return password;
     }
 
     @Override
