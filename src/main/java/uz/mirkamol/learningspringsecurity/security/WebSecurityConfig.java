@@ -33,6 +33,7 @@ private final CustomUserDetailService customUserDetailService;
                 .authorizeHttpRequests(registry -> registry
                         .requestMatchers("/").permitAll()
                         .requestMatchers("/auth/login").permitAll()
+                        .requestMatchers(("/admin/**")).hasRole("ADMIN")
                         .anyRequest().authenticated()
                 );
         return http.build();

@@ -9,7 +9,6 @@ import lombok.Setter;
 public class UserEntity {
     private Long id;
     private String email;
-    @JsonIgnore
     private String password;
     private String role;
     private String extraInfo;
